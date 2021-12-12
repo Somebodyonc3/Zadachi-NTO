@@ -27,4 +27,4 @@
 '''
 
 for i in range(50, 7000):
-  hydra, temp = map(input(), split(' '))
+    getData = list(filter(None,((sys.stdin.read()).split('\n'))))
