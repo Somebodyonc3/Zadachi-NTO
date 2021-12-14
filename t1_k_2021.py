@@ -25,6 +25,34 @@
 3
 3
 '''
+import sys
 
-for i in range(50, 7000):
-    getData = list(filter(None,((sys.stdin.read()).split('\n'))))
+Data = list(filter(None,((sys.stdin.read()).split('\n'))))
+
+Answer = []
+
+for i in range(len(data)):
+    
+    t = data[i].split()
+    x = int(t[i][0][:-1])
+    y = int(t[i][1][:-2])
+
+    if (x < 0 and y < 0):
+      x *= -1
+      y *= -1
+
+    if x > 50 and y < 0:
+      Answer.append(1)
+    
+    if x < 50 and y > 0:
+      Answer.append(2)
+    
+    if x > 50 and y > 0:
+      Answer.append(3)
+    
+    if x < 50 and y < 0:
+      Answer.append(4)
+
+print(*Answer, sep = '\n')
+
+
