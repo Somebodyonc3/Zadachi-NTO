@@ -27,32 +27,36 @@
 '''
 import sys
 
-Data = list(filter(None,((sys.stdin.read()).split('\n'))))
-
+Data = [x.strip() for x in sys.stdin]
+lenn = 50
 Answer = []
 
-for i in range(len(data)):
-    
-    t = data[i].split()
-    x = int(t[i][0][:-1])
-    y = int(t[i][1][:-2])
-
-    if (x < 0 and y < 0):
-      x *= -1
-      y *= -1
+for i in range(len(Data)):
+    if i == 0:
+        k = 1
+    t = Data[i].split()
+    x = int(t[0][:-1])
+    y = int(t[1][:-2])
 
     if x > 50 and y < 0:
-      Answer.append(1)
-    
+        Answer.append(1)
     if x < 50 and y > 0:
-      Answer.append(2)
-    
+        Answer.append(2)
     if x > 50 and y > 0:
-      Answer.append(3)
-    
+        Answer.append(3)
     if x < 50 and y < 0:
-      Answer.append(4)
+        Answer.append(4)
+    if i > 0 and Answer[i] == Answer[i - 1]:
+        k += 1
+    elif i == 0:
+        continue
+    elif i > 0  and Answer[i] != Answer[i - 1]:
+        if k < lenn:
+            Answer[i] = Answer[i - 1]
+        elif k >= lenn:
+            if (min(Answer[i - 1], Answer[i]), max(Answer[i - 1], Answer[i])) in {(1, 2), (3, 4)}:
+                Answer[i] = Answer[i - 1]
+            else:
+                k = 1
 
-print(*Answer, sep = '\n')
-
-
+print(*Answer, sep='\n')

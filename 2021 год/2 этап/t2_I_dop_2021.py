@@ -12,6 +12,7 @@
 #u - 01nn | v - asd4 | w - 777d | x - 9kna
 #y - nbru | z - illb |          |
 #Входной формат: две строки. Первая строка содержит сообщение, которое необходимо дешифровать. Вторая, сообщение, которое нужно зашифровать.
+
 coding = {'a': 'bj7a', 'b': 'mba1', 'c': '7fva', 'd': '5fjb', 'e': '07na', 'f': '11jf', 'g': 'vfyt', 'h': 'vg8k', 'i': 'zfum', 'j': 'evun', 'k': 'i7an','l': 'ao8n', 'm': 'amby', 'n': 'bka4', 'o': 'rknm', 'p': '47an', 'q': 'vlya', 'r': 'qdqf', 's': 'ikmj', 't': 'ufnu', 'u': '01nn', 'v': 'asd4','w': '777d', 'x': '9kna', 'y': 'nbru', 'z': 'illb'}
 
 encoding = dict()
