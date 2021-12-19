@@ -17,28 +17,28 @@ for z in range(q):
 
 
     if len(dic[3]) > 0:
-        Answer.append(f'{3 - dic[3][1]},{3 - dic[3][0]}')
+        Answer.append(f'{dic[3][1] -3},{dic[3][0] -3}')
     elif len(dic[2]) > 0:
         t = dic[2][0]
         if t[0] == 0:
-            Answer.append(f'{3 - t[1]},4')
+            Answer.append(f'{t[1] - 3},-4')
         elif t[0] == 6:
-            Answer.append(f'{3 - t[1]},-4')
+            Answer.append(f'{t[1] - 3},4')
         elif t[1] == 0:
-            Answer.append(f'4,{3 - t[0]}')
+            Answer.append(f'-4,{t[0] - 3}')
         else:
-            Answer.append(f'-4,{3 - t[0]}')
+            Answer.append(f'4,{t[0] - 3}')
 
     else:
         t = dic[1][0]
         if t[0] == 0:
-            Answer.append(f'{3 - t[1]},5')
+            Answer.append(f'{t[1] - 3},-5')
         elif t[0] == 6:
-            Answer.append(f'{3 - t[1]},-5')
+            Answer.append(f'{t[1] - 3},5')
         elif t[1] == 0:
-            Answer.append(f'5,{3 - t[0]}')
+            Answer.append(f'-5,{t[0] - 3}')
         else:
-            Answer.append(f'-5,{3 - t[0]}')
+            Answer.append(f'5,{t[0] - 3}')
     if z < q - 1:
         input()
 print(*Answer, sep = '\n')
