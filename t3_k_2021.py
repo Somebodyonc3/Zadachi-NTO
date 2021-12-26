@@ -35,10 +35,23 @@
 
 Эта задача проверяет ваш навык написания алгоритмов анализа данных, что является частью финальной задачи.
 '''
-group_1 = []
-group_2 = []
-group_3 = []
-group_4 = []
+data = [float(input()) for _ in range(52560)]
+zakon, maxi, maxi_local = 0, [], []
+for i in range(len(data)):
+    if data[i] > 0.0 and data[i + 1] > 0.0:
+        zakon = 0
+        maxi_local.append(data[i])
+    elif data[i] == 0.0:
+        if zakon < 7: zakon += 1
+    elif data[i] > 0.0 and zakon == 0: maxi_local.append(float(data[i]))
+    if zakon == 7 and len(maxi_local) > 0:
+        maxi.append(max(maxi_local))
+        maxi_local = []
 
-for i in range(52560):
-    x = float(input())
+first_gr, second_gr, three_gr, four_gr = 0, 0, 0, 0
+for i in maxi:
+    if 0.0 <= i <= 2: first_gr += 1
+    elif 2.1 <= i <= 4.5: second_gr += 1
+    elif 4.6 <= i <= 8: three_gr += 1
+    elif i >= 8.1: four_gr += 1
+print(first_gr, second_gr, three_gr, four_gr, sep='\n')
