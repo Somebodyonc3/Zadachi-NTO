@@ -1,4 +1,4 @@
-s = input()
+
 def encode(s: bytes) -> bytes:
 	p = [1, 2, 4, 8, 16, 32, 64, 128]
 	plaintext = []
@@ -29,7 +29,7 @@ def encode(s: bytes) -> bytes:
 		encoded.append(c_byte)
 	print(encoded)
 	return bytes(encoded)
-encode(s)
+
 
 '''
 def decode(s: bytes) -> bytes:
