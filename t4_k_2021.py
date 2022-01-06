@@ -17,3 +17,50 @@
 
 7 3 12 4 1 8
 '''
+n = int(input())
+
+total = n * (n + 1) // 2
+
+times = total * [0]
+ans = total * [-1]
+prev = total * [-1]
+
+i = 0
+
+for k in range(1, n + 1):
+    ts = input().split()
+    for t in ts:
+        if t[-1] == '*':
+            times[i] = int(t[:-1])
+            real_time = 2 * times[i]
+        else:
+            times[i] = int(t)
+            real_time = times[i]
+            
+        if i == 0:
+            ans[i] = real_time
+        else:
+            ans[i] += real_time
+
+        if k < n:
+            for j in (i + k, i + k + 1):
+                if prev[j] == -1 or ans[i] < ans[j]:
+                    ans[j] = ans[i]
+                    prev[j] = i
+
+        i += 1
+
+i_min = total - n
+
+for i in range(total - n + 1, total):
+    if ans[i] < ans[i_min]:
+        i_min = i
+
+j = i_min
+stack = []
+
+while j != -1:
+    stack.append(times[j])
+    j = prev[j]
+
+print(" ".join(map(str, stack[::-1])))
