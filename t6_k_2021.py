@@ -78,7 +78,7 @@ def pid_compute(target, setpoint):
     target — текущая температура в печи
     setpoint — необходимая температура
     """
-
+    #А как?
     """
     TODO: реализовать ПИД-регулятор по формуле
     k(t) = kp * (e(t) + ki * dt * sum(e(t)) + kd * (e(t)-e(t-1)) / dt)
