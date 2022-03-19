@@ -1,18 +1,26 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-fin = open('', 'r')
-
-t = []
+T = []
 pd1 = []
 pd2 = []
 pd3 = []
 
-for line in fin:
-	line = fin.readline()
-	x, y, z, a = map(int, line.split())
-	t.append(x)
-	pd1.append(y)
-	pd2.append(z)
-	pd3.append(a)
-print(t, pdq, pd2, pd3, sep='\n')
+
+with open("data.txt") as file:
+    for line in file:
+        
+        b = file.readline().split()
+        
+        for x in b:
+            T.append(int(x))
+            pd1.append(int(x))
+            pd2.append(int(x))
+            pd3.append(int(x))
+print('t =', T)
+print()
+print('PD1 =', pd1)
+print()
+print('PD2 =', pd2)
+print()
+print('PD3 =', pd3)
